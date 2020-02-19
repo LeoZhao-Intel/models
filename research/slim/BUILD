@@ -77,6 +77,17 @@ py_library(
 )
 
 py_library(
+    name = "download_and_convert_brilliance",
+    srcs = ["datasets/download_and_convert_brilliance.py"],
+    deps = [
+        ":dataset_utils",
+        # "//numpy",
+        "//third_party/py/six",
+        # "//tensorflow",
+    ],
+)
+
+py_library(
     name = "download_and_convert_visualwakewords_lib",
     srcs = ["datasets/download_and_convert_visualwakewords_lib.py"],
     deps = [

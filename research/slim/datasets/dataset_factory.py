@@ -30,6 +30,7 @@ datasets_map = {
     'imagenet': imagenet,
     'mnist': mnist,
     'visualwakewords': visualwakewords,
+    'brilliance': brilliance,
 }
 
 

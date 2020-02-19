@@ -45,6 +45,7 @@ from datasets import download_and_convert_cifar10
 from datasets import download_and_convert_flowers
 from datasets import download_and_convert_mnist
 from datasets import download_and_convert_visualwakewords
+from datasets import download_and_convert_brilliance
 
 FLAGS = tf.compat.v1.app.flags.FLAGS
 
@@ -86,6 +87,8 @@ def main(_):
     download_and_convert_visualwakewords.run(
         FLAGS.dataset_dir, FLAGS.small_object_area_threshold,
         FLAGS.foreground_class_of_interest)
+  elif FLAGS.dataset_name == 'brilliance':
+    download_and_convert_brilliance.run(FLAGS.dataset_dir)
   else:
     raise ValueError(
         'dataset_name [%s] was not recognized.' % FLAGS.dataset_name)
