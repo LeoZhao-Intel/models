@@ -23,6 +23,7 @@ from datasets import flowers
 from datasets import imagenet
 from datasets import mnist
 from datasets import visualwakewords
+from datasets import brilliance
 
 datasets_map = {
     'cifar10': cifar10,
