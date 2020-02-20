@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-r"""Downloads and converts Flowers data to TFRecords of TF-Example protos.
+r"""Downloads and converts Brilliance data to TFRecords of TF-Example protos.
 
-This module downloads the Flowers data, uncompresses it, reads the files
-that make up the Flowers data and creates two TFRecord datasets: one for train
+This module downloads the brilliance data, uncompresses it, reads the files
+that make up the brilliance data and creates two TFRecord datasets: one for train
 and one for test. Each TFRecord dataset is comprised of a set of TF-Example
 protocol buffers, each of which contain a single image and label.
 
@@ -36,8 +36,8 @@ import tensorflow as tf
 
 from datasets import dataset_utils
 
-# The URL where the Flowers data can be downloaded.
-#_DATA_URL = 'http://download.tensorflow.org/example_images/flower_photos.tgz'
+# The URL where the brilliance data can be downloaded.
+#_DATA_URL = 'http://download.brilliance.come/training_images/brilliance_photos.tgz'
 
 # The number of images in the validation set.
 _NUM_VALIDATION = 150
@@ -80,12 +80,12 @@ def _get_filenames_and_classes(dataset_dir):
     A list of image file paths, relative to `dataset_dir` and the list of
     subdirectories, representing class names.
   """
-#  flower_root = os.path.join(dataset_dir, 'flower_photos')
-  flower_root = dataset_dir
+#  brilliance_root = os.path.join(dataset_dir, 'brilliance_photos')
+  brilliance_root = dataset_dir
   directories = []
   class_names = []
-  for filename in os.listdir(flower_root):
-    path = os.path.join(flower_root, filename)
+  for filename in os.listdir(brilliance_root):
+    path = os.path.join(brilliance_root, filename)
     if os.path.isdir(path):
       directories.append(path)
       class_names.append(filename)
